@@ -6,9 +6,7 @@
 
 using namespace std;
 
-// =================================================================
-// 1. CONCEPTOS PERSONALIZADOS (REQUERIMIENTO 1)
-// =================================================================
+
 namespace core_numeric {
 
     // Conceptos exigidos por la guia [cite: 126, 127]
@@ -114,26 +112,3 @@ public:
     ObjetoFisico operator+(const ObjetoFisico& otro) const { return ObjetoFisico(peso + otro.peso); }
     bool operator>(const ObjetoFisico& otro) const { return peso > otro.peso; }
 };
-
-int main() {
-    // Casos que compilan segun guia [cite: 204]
-    vector<double> mis_valores = {2.5, 5.0, 7.5};
-
-    cout << "--- TEST CORE_NUMERIC UTEC ---" << endl;
-    cout << "Promedio: " << core_numeric::mean(mis_valores) << endl;
-    cout << "Varianza: " << core_numeric::variance(mis_valores) << endl;
-    cout << "Maximo: " << core_numeric::max(mis_valores) << endl;
-    cout << "Suma Variadica: " << core_numeric::sum_variadic(10, 20, 30, 40) << endl;
-
-    // Prueba con objetos propios
-    vector<ObjetoFisico> caja = {ObjetoFisico(15.2), ObjetoFisico(42.8)};
-    cout << "Peso maximo en caja: " << core_numeric::max(caja).peso << endl;
-
-    /* EJEMPLO QUE NO COMPILA (Comentado):
-       vector<string> textos = {"A", "B"};
-       // core_numeric::mean(textos);
-       // Falla porque string no cumple SoportaDivision [cite: 169]
-    */
-
-    return 0;
-}
