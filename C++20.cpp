@@ -9,7 +9,6 @@ using namespace std;
 
 namespace core_numeric {
 
-    // Conceptos exigidos por la guia [cite: 126, 127]
     template <typename Contenedor>
     concept EsRecorrible = requires (Contenedor c) {
         begin(c);
@@ -26,7 +25,6 @@ namespace core_numeric {
         { a / n } -> same_as<T>;
     };
 
-    // Concepto propio creado desde cero (Requerimiento 1 final) [cite: 146]
     template <typename T>
     concept EsComparable = requires (T alfa, T beta) {
         { alfa > beta } -> convertible_to<bool>;
